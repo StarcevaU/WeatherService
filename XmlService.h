@@ -1,11 +1,9 @@
 #pragma once
 #include "Service.h"
 using namespace std;
-class JsonService : public Service
+class XmlService :public Service
 {
 public:
 	virtual Weather getWeather(std::string s) override;
-	virtual ~JsonService() {};
+	virtual ~XmlService() {};
 };
-
-
