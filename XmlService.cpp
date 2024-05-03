@@ -1,5 +1,5 @@
 #include "XmlService.h"
-#include"pugixml-1.14/src/pugixml.hpp"
+#include"pugixml-1.13/src/pugixml.hpp"
 #include<fstream>
 #include<exception>
 
@@ -14,6 +14,7 @@ Weather XmlService::getWeather(std::string s)
     std::string city = node.child("city").
         attribute("name").
         as_string(); //  Киров
+
     double lon = node.child("city").child("coord").
         attribute("lon").
         as_int(); // 49.6601
@@ -30,12 +31,12 @@ Weather XmlService::getWeather(std::string s)
         attribute("weather").
         as_string();// дождь
 
-    double windSpeed = node.child("city").child("coord").
+    double windSpeed = node.child("city").
         attribute("winSpeed").
         as_int(); // 4.27
 
-    int clouds = node.child("city").child("coord").
-        attribute("clouds").
+    int clouds = node.child("name").
+        attribute("value").
         as_int(); // 100
     return Weather();
 }

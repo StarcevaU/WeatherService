@@ -14,7 +14,7 @@ Weather JsonService::getWeather(std::string s)
     j = json::parse(fin);
     std::string city = j["name"]; //  Киров
     double lon = j["coord"]["lon"]; // 49.6601
-    double lat = j["lat"]; // 58.5966  
+    double lat = j["coord"]["lat"]; // 58.5966  
     double temperature = j["temperature"]; // 5.69
     std::string weather = j["weather"]; // дождь
     double windSpeed = j["windSpeed"]; // 4.27
